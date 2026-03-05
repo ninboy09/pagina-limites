@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Límites en Matemáticas - Segundo de Bachillerato</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        /* Navegación */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #222;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 5px 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        header {
+            margin-top: 60px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #007bff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .interactive {
+            margin-top: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <!-- GeoGebra -->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#concepto">Concepto</a></li>
+        <li><a href="#notacion">Notación</a></li>
+        <li><a href="#laterales">Laterales</a></li>
+        <li><a href="#directos">Directos</a></li>
+        <li><a href="#ind00">0/0</a></li>
+        <li><a href="#indinf">∞/∞</a></li>
+        <li><a href="#grafica">Gráfica</a></li>
+        <li><a href="#ejercicios">Ejercicios</a></li>
+        <li><a href="#creditos">Créditos</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h1>Límites en Matemáticas</h1>
+    <p>Recurso educativo interactivo – Segundo de Bachillerato</p>
+</header>
+
+<main>
+
+<section id="inicio">
+    <h2>¿Qué es un límite?</h2>
+    <p>
+        Un límite describe el valor al que se aproxima una función cuando la variable independiente se acerca a un número determinado.
+        Es fundamental para entender el comportamiento de funciones y el cambio.
+    </p>
+    <button onclick="location.href='#concepto'">Empezar</button>
+</section>
+
+<section id="concepto">
+    <h2>Concepto Intuitivo de Límite</h2>
+    <p>
+        El límite se entiende como un proceso de aproximación. Aunque el valor no se alcance,
+        la función puede acercarse cada vez más a un número.
+    </p>
+
+    <table>
+        <tr><th>x</th><th>f(x)=x²</th></tr>
+        <tr><td>1.9</td><td>3.61</td></tr>
+        <tr><td>1.99</td><td>3.9601</td></tr>
+        <tr><td>2</td><td>4</td></tr>
+    </table>
+
+    <div class="interactive">
+        <p>Explora la gráfica interactiva:</p>
+        <div id="ggb-element"></div>
+        <script>
+            var ggbApp = new GGBApplet(
+                { "appName": "graphing", "width": 600, "height": 400, "showToolBar": false },
+                true
+            );
+            ggbApp.inject('ggb-element');
+        </script>
+    </div>
+</section>
+
+<section id="notacion">
+    <h2>Notación del Límite</h2>
+    <p>
+        La expresión <strong>lim (x → a) f(x) = L</strong> significa que f(x) se aproxima a L cuando x se acerca a a.
+    </p>
+</section>
+
+<section id="laterales">
+    <h2>Límites Laterales</h2>
+    <p>
+        Un límite puede analizarse por la izquierda (x → a⁻) y por la derecha (x → a⁺).
+        Si ambos coinciden, el límite existe.
+    </p>
+</section>
+
+<section id="directos">
+    <h2>Cálculo de Límites Directos</h2>
+    <p>
+        Cuando la función es continua, el límite se calcula sustituyendo directamente el valor.
+    </p>
+    <p><strong>Ejemplo:</strong> lim (x → 2) (x² + 3x) = 10</p>
+</section>
+
+<section id="ind00">
+    <h2>Indeterminación 0 / 0</h2>
+    <p>
+        Cuando al sustituir obtenemos 0/0, se debe simplificar la expresión algebraica.
+    </p>
+</section>
+
+<section id="indinf">
+    <h2>Indeterminación ∞ / ∞</h2>
+    <p>
+        En estos casos se comparan los grados de los polinomios para analizar el comportamiento de la función.
+    </p>
+</section>
+
+<section id="grafica">
+    <h2>Interpretación Gráfica</h2>
+    <p>
+        El valor del límite no siempre coincide con el valor de la función en un punto.
+        La gráfica permite identificar discontinuidades.
+    </p>
+</section>
+
+<section id="ejercicios">
+    <h2>Ejercicios Prácticos</h2>
+    <p>
+        Selecciona el tipo de límite y resuelve el ejercicio.  
+        La retroalimentación se presenta de forma guiada.
+    </p>
+    <button>Generar ejercicio</button>
+</section>
+
+<section id="creditos">
+    <h2>Créditos</h2>
+    <p>
+        Desarrollado por: <strong>Ian Barona</strong><br>
+        Institución: [Nombre del colegio]<br>
+        Asignatura: Matemáticas / TIC
+    </p>
+    <p>
+        Bibliografía: Stewart, J. (2016). <em>Calculus: Early Transcendentals</em>.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 – Página Educativa sobre Límites</p>
+</footer>
+
+</body>
+</html>
